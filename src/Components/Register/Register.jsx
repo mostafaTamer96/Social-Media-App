@@ -29,6 +29,13 @@ const [isLoading,setIsLoading]=useState(null)
     
   })
 
+  function myHandelLogIn(){
+    alert("asd")
+  }
+  
+
+
+
  
   const {register,handleSubmit,formState}= useForm({
     defaultValues:{
@@ -88,24 +95,6 @@ async  function myHandelSubmit(values){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -253,6 +242,7 @@ async  function myHandelSubmit(values){
 </button>
 
             </div>
+            
 {success && !errorMsg && (
   <p className="mt-1 text-green-500 text-xl font-bold">{success}</p>
 )}
@@ -268,9 +258,15 @@ async  function myHandelSubmit(values){
               Log in and continue your social journey.
             </p>
 
+
+
+
+
+
+
       {/* log in Form */}
    
-                   <form onSubmit={handleSubmit(myHandelSubmit)} className="mt-6 flex flex-col gap-4">
+                   <form onSubmit={handleSubmit(myHandelLogIn)} className="mt-6 flex flex-col gap-4">
            
           
              
@@ -289,6 +285,8 @@ async  function myHandelSubmit(values){
                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                   />
                 </svg>
+                  {formState.errors.name  && <p className="mt-1 text-xs font-semibold text-rose-600" >{ formState.errors.name.message}</p>   }
+
                 <input
                 {...register("name")}
                   type="text"
@@ -324,18 +322,22 @@ async  function myHandelSubmit(values){
               </div>
              
   
-      </form>
+     
+
+
+
+
 
 
 
            {/* Action Buttons */}
               <button
-                type="button"
+                type="submit"
                 className=" capitalize cursor-pointer w-full rounded-2xl bg-[#00298D] py-3.5 text-base font-extrabold text-white transition-opacity hover:opacity-95 my-4 "
               >
                log in
               </button>
-
+ </form>
               <button
                 type="button"
                 className="w-full text-center cursor-pointer text-base font-semibold text-[#00298d] hover:underline"
@@ -354,7 +356,43 @@ async  function myHandelSubmit(values){
             <title>Create Account | Route Posts</title>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   {/* SignUp form */}
+
+
  <form onSubmit={handleSubmit(myHandelSubmit)} className="mt-6 flex flex-col space-y-3">
   {/* 1. Full Name */}
   <div className=" mo flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-[#f8fafc] px-4 py-3.5 transition-colors focus-within:border-[#00298d] focus-within:bg-white">
